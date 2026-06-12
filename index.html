@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog de Robótica - El Cerebro de la Máquina</title>
+    <style>
+        /* Estilos generales y paleta de colores (tema morado) */
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            background-color: #f4f4f9; 
+            color: #333; 
+            line-height: 1.6; 
+            margin: 0; 
+            padding: 0; 
+        }
+        .container { 
+            width: 85%; 
+            max-width: 900px; 
+            margin: 40px auto; 
+            overflow: hidden; 
+        }
+        header { 
+            background: linear-gradient(135deg, #5e2a84, #9b59b6);
+            color: #fff; 
+            padding: 40px 20px; 
+            border-radius: 12px 12px 0 0; 
+            text-align: center; 
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        header h1 { 
+            margin: 0; 
+            font-size: 2.5em;
+            letter-spacing: 1px;
+        }
+        header p {
+            margin-top: 10px;
+            font-size: 1.2em;
+            color: #e0b0ff;
+            font-weight: 300;
+        }
+        .post-content { 
+            background: #fff; 
+            padding: 40px 50px; 
+            border-radius: 0 0 12px 12px; 
+            box-shadow: 0px 8px 20px rgba(0,0,0,0.05); 
+        }
+        h2 { 
+            color: #5e2a84; 
+            border-bottom: 2px solid #f0e6f7; 
+            padding-bottom: 8px; 
+            margin-top: 35px;
+            font-size: 1.8em;
+        }
+        p {
+            font-size: 1.1em;
+            color: #4a4a4a;
+            margin-bottom: 20px;
+        }
+        code {
+            background-color: #f0e6f7;
+            color: #5e2a84;
+            padding: 3px 8px;
+            border-radius: 5px;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bold;
+        }
+        .img-placeholder { 
+            width: 100%; 
+            height: auto; 
+            max-height: 450px;
+            object-fit: cover;
+            border-radius: 10px; 
+            margin: 25px 0; 
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+            transition: transform 0.3s ease;
+        }
+        .img-placeholder:hover {
+            transform: scale(1.02);
+        }
+        .highlight-box { 
+            background: #fdfaf6; 
+            padding: 25px; 
+            border-left: 6px solid #5e2a84; 
+            border-radius: 0 10px 10px 0;
+            margin-top: 45px; 
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>El Cerebro de la Máquina</h1>
+            <p>Descifrando el código detrás de la robótica (Unidad III)</p>
+        </header>
+
+        <div class="post-content">
+            
+            <p>¡Qué onda, gente! Ya estamos en la semana 14 de la universidad, acercándonos al final del semestre, y hoy toca meternos en un tema que me parece brutal: cómo pasamos de tener un montón de metal y cables a crear algo con "vida" propia. Para los que pasamos el día entre bases de datos, maquetando con HTML/CSS o tirando código en Python, entender la lógica de un robot es como jugar de local, solo que esta vez el resultado físico se mueve.</p>
+
+            <h2>¿En qué idioma piensan los robots?</h2>
+            <p>Si alguna vez te has preguntado cómo le damos instrucciones a una máquina de estas, te cuento que no hay un lenguaje absoluto. Todo depende del hardware y de qué tan rápido necesites que reaccione. Los MVP de esta área suelen ser <strong>C++</strong> y <strong>Python</strong>.</p>
+            <p>Si necesitas que el robot procese información visual o aplique machine learning, Python es tu mejor amigo; es súper cómodo y te permite levantar la lógica volando. Pero si estás programando un microcontrolador que necesita reaccionar en milisegundos para que el robot no se estrelle, C++ entra en acción. Es la mezcla perfecta entre la velocidad cruda y la lógica de alto nivel.</p>
+            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Placa de circuitos y robótica" class="img-placeholder">
+
+            <h2>La lógica detrás de la magia: Algoritmos</h2>
+            <p>Suena a palabra de científico, pero un algoritmo es simplemente una receta: una serie de pasos para resolver un problema. Aquí es donde entran las estructuras de control.</p>
+            <p>Piensa en la lógica que usas cuando estás en una partida tensa de Counter-Strike o reaccionando a un gankeo en League of Legends. Tomas decisiones en fracciones de segundo basándote en tu entorno. Al programar un robot, hacemos lo mismo usando condicionales (<code>if</code> / <code>else</code>) y bucles (<code>while</code>). Literalmente le decimos a la placa: <em>"Si el sensor de distancia detecta un muro a 5 cm, detente y gira; si el camino está libre, dale plomo hacia adelante"</em>.</p>
+
+            <h2>Del código al mundo real: Programando el movimiento</h2>
+            <p>Aquí es donde la cosa se pone física. Para que un brazo robótico agarre un objeto, no basta con decirle "agárralo". Tenemos que traducir nuestra lógica en energía para los motores (los actuadores).</p>
+            <p>Empezamos con tareas súper sencillas, como calcular los ángulos exactos para que un servomotor gire y alcance una coordenada precisa. Es agarrar la data en crudo que recogen los sensores, procesarla con nuestro código y convertirla en una acción que afecta el mundo físico. Es pasar de lo digital a lo tangible.</p>
+            <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Brazo robótico en funcionamiento" class="img-placeholder">
+
+            <div class="highlight-box">
+                <p><strong>En resumen:</strong> Programar un robot no es magia negra, es simplemente el arte de conectar el software con el hardware. Ya sea que estés armando la arquitectura de una aplicación web, puliendo el código de un sistema de inventario o dándole instrucciones a un motor paso a paso, la filosofía es la misma: desarmar un problema grande en pasos chiquitos y escribir la lógica para resolverlo. ¡Nos leemos en la próxima entrega!</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
